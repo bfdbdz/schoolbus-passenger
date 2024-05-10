@@ -1,0 +1,84 @@
+<!--pages/route/route.wxml-->
+<custom-component id="location-page" />
+<view class="routeContainer" wx:if="{{showChoice}}">
+	<view class="section">
+		<picker mode="date" value="{{date}}" start="2020-05-01" end="2030-12-31" bindchange="bindDateChange">
+			<button class="picker">
+				选择乘车日期：{{date}}
+			</button>
+		</picker>
+		<image class="img" src="../../images/route_icons/date.png" mode="widthFix"></image>
+	</view>
+
+	<view class="section">
+		<picker value="{{time}}" bindchange="bindTimeChange" range="{{timeList}}">
+			<button class="picker">
+				选择乘车时间：{{timeList[time]}}
+			</button>
+		</picker>
+		<image class="img" src="../../images/route_icons/time.png" mode="widthFix"></image>
+	</view>
+
+	<view class="section">
+		<picker bindchange="bindRouteChange" value="{{index}}" range="{{route}}">
+			<button class="picker">
+				选择乘坐路线：{{route[index]}}
+			</button>
+		</picker>
+		<image class="img" src="../../images/route_icons/route.png" mode="widthFix"></image>
+	</view>
+
+
+	<view class="table-item {{selected == index ? 'selected' : ''}}" wx:for="{{taskList}}" wx:key="index" data-index="{{index}}" bind:tap="chooseTask">
+		<view class="table-row">
+			<view class="table-title">发车时间：</view>
+			<view class="table-cell">{{item['time']}}</view>
+		</view>
+		<view class="table-row">
+			<view class="table-title">路线：</view>
+			<view class="table-cell">{{item['route']}}</view>
+		</view>
+		<view class="table-row">
+			<view class="table-title">车牌：</view>
+			<view class="table-cell">{{item['licensePlate']}}</view>
+		</view>
+	</view>
+
+	<view class="confirm" wx:if="{{showBtn}}" bind:tap="confirmTask">
+		<button class="confirm-btn">确认乘坐该班次</button>
+	</view>
+
+	<view wx:elif="{{showNoChoose}}" class="noBtn">
+		<text>抱歉，没有所选条件对应的班次</text>
+	</view>
+
+	<view wx:else class="noBtn">
+		<text>抱歉，暂无班次可供乘坐</text>
+	</view>
+</view>
+
+<view wx:else>
+	<view class="succseeContainer">
+		<image class="successImg" src="../../images/getoff-icons/success.png" mode="widthFix"></image>
+		<text class="successText">当前选择班次:</text>
+		<view class="successTask">
+			<view class="table-row">
+				<view class="table-title">发车时间：</view>
+				<view class="table-cell">{{taskList[selected]['time']}}</view>
+			</view>
+			<view class="table-row">
+				<view class="table-title">路线：</view>
+				<view class="table-cell">{{taskList[selected]['route']}}</view>
+			</view>
+			<view class="table-row">
+				<view class="table-title">车牌：</view>
+				<view class="table-cell">{{taskList[selected]['licensePlate']}}</view>
+			</view>
+		</view>
+		<view class="btn">
+			<button class="geton-btn" bind:tap="gotoGeton">去选择上车站点</button>
+				<button class="cancel-btn" bind:tap="cancelTask">取消乘坐该班次</button>
+				
+			</view>
+	</view>
+</view>

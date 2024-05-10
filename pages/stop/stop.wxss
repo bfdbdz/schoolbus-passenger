@@ -1,0 +1,181 @@
+/* pages/stop/stop.wxss */
+.geton-container {
+	border-bottom: 2rpx dashed rgb(141, 141, 141);
+}
+
+.noRoute {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.noRoute-content {
+	height: 300rpx;
+	display: flex;
+	align-items: center;
+	font-size: 35rpx;
+	color: rgb(110, 110, 110);
+}
+
+.noRoute-btn {
+	margin-bottom: 100rpx;
+	display: flex;
+	align-items: center;
+	padding-bottom: 150rpx;
+}
+
+.noRouteBtn {
+	background-color: #6587b5;
+	color: white;
+	border-radius: 30rpx;
+}
+
+.noRouteBtn:active {
+	background-color: #486183;
+}
+
+.noBus {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.noBus-Img {
+	margin: 10%;
+	width: 30%;
+}
+
+.noBusImg {
+	width: 100%;
+}
+
+.noBus-content-1 {
+	font-size: 40rpx;
+	color: rgb(110, 110, 110);
+	margin-top: 5%;
+}
+
+.noBus-content-2 {
+	font-size: 30rpx;
+	color: rgb(110, 110, 110);
+	margin-top: 3%;
+	padding-bottom: 150rpx;
+}
+
+.container {
+	width: 100%;
+	padding-top: 80rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.title {
+	margin-left: 40rpx;
+	font-size: 35rpx;
+	height: 60rpx;
+	color: rgb(110, 110, 110);
+}
+
+.station-container {
+	width: 100%;
+	margin-top: 30rpx;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.station {
+	width: 40%;
+	height: 200rpx;
+	margin: 2%;
+	/* cursor: pointer; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* border: 2rpx solid #486183; */
+	border-radius: 30rpx;
+}
+
+.station-active {
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.stationName.onSelected,
+.stationName.offSelected {
+	color: #6587b5;
+}
+
+.stationImg {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.stationName {
+	margin-top: 15rpx;
+	font-size: 35rpx;
+}
+
+.geton,
+.getoff {
+	width: 100%;
+	margin-top: 70rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 150rpx;
+}
+
+.geton-btn,
+.getoff-btn {
+	background-color: #6587b5;
+	color: white;
+	border-radius: 30rpx;
+}
+
+.geton-btn:active,
+.getoff-btn:active {
+	background-color: #486183;
+}
+
+.successContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.successImg {
+	width: 30%;
+	margin: 10%;
+}
+
+.successTitle {
+	color: rgb(110, 110, 110);
+	font-size: 45rpx;
+	font-weight: 600;
+}
+
+.successName {
+	font-size: 50rpx;
+	margin-top: 5%;
+	color: #6587b5;
+}
+
+.success-btn {
+	margin-top: 25%;
+	padding-bottom: 150rpx;
+}
+
+.successBtn {
+	background-color: #6587b5;
+	color: white;
+	border-radius: 30rpx;
+}
+
+.successBtn:active {
+	background-color: #486183;
+}
