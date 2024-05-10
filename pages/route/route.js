@@ -58,13 +58,30 @@ Page({
 
 	getTask() {
 		let params = {}
-		if (this.data.index != undefined) {
+		console.log("选择date", this.data.date)
+		console.log("选择time",this.data.timeList[this.data.time])
+		console.log("选择number",this.data.index)
+		if (this.data.index != undefined && this.data.index != null) {
 			params.number = Number(this.data.index) + 1
 		}
-		if (this.data.date != null && this.data.timeList[this.data.time] != null) {
-			console.log("time不为空", this.data.date)
-			console.log(this.data.timeList[this.data.time])
+		if (this.data.date != '' && this.data.timeList[this.data.time] != null) {
 			params.time = this.data.date + " " + this.data.timeList[this.data.time] + ":00"
+		}
+		if (this.data.date != ''&& this.data.timeList[this.data.time] == null) {
+			wx.showToast({
+				title: '请选择一个时间进行查询',
+				icon: 'none',
+				mask: 'true',
+				duration: 1000
+			})
+		}
+		if (this.data.date == '' && this.data.timeList[this.data.time] != null) {
+			wx.showToast({
+				title: '请选择一个日期进行查询',
+				icon: 'none',
+				mask: 'true',
+				duration: 1000
+			})
 		}
 		wx.request({
 			url: 'http://192.168.74.155:8080/passenger/task',
@@ -82,6 +99,27 @@ Page({
 				console.log(res)
 			}
 		})
+	},
+
+	clearDate(){
+		this.setData({
+			date:''
+		})
+		this.getTask()
+	},
+
+	clearTime(){
+		this.setData({
+			time:''
+		})
+		this.getTask()
+	},
+
+	clearRoute(){
+		this.setData({
+			index:null
+		})
+		this.getTask()
 	},
 
 	checkRoute() {

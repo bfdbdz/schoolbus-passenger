@@ -7,7 +7,7 @@
 				选择乘车日期：{{date}}
 			</button>
 		</picker>
-		<image class="img" src="../../images/route_icons/date.png" mode="widthFix"></image>
+		<image class="img" bind:tap="clearDate" src="../../images/route_icons/date.png" mode="widthFix"></image>
 	</view>
 
 	<view class="section">
@@ -16,7 +16,7 @@
 				选择乘车时间：{{timeList[time]}}
 			</button>
 		</picker>
-		<image class="img" src="../../images/route_icons/time.png" mode="widthFix"></image>
+		<image class="img" bind:tap="clearTime" src="../../images/route_icons/time.png" mode="widthFix"></image>
 	</view>
 
 	<view class="section">
@@ -25,7 +25,7 @@
 				选择乘坐路线：{{route[index]}}
 			</button>
 		</picker>
-		<image class="img" src="../../images/route_icons/route.png" mode="widthFix"></image>
+		<image class="img" bind:tap="clearRoute" src="../../images/route_icons/route.png" mode="widthFix"></image>
 	</view>
 
 
