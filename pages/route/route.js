@@ -437,7 +437,10 @@ Page({
 
 	refreshOtherPage() {
 		const pages = getCurrentPages();
-		const refreshPage = pages.find(page => page.route === 'pages/route/route');
+		const refreshPage = pages.find(page => page.route === 'pages/stop/stop');
+		console.log("refreshpage")
+		console.log(pages)
+		console.log(refreshPage)
 		if (refreshPage) {
 			console.log("刷新站点页面")
 			refreshPage.onShow();

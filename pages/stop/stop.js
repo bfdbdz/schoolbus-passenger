@@ -67,7 +67,7 @@ Page({
 				stationChoice = 'yun'
 				break;
 			case "教学西楼":
-				stationChoice = 'jioaxi'
+				stationChoice = 'jiaoxi'
 				break;
 			case "海天苑":
 				stationChoice = 'hai'

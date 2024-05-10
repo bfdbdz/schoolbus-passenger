@@ -54,8 +54,8 @@
 		<!--  -->
 		<!-- 选择下车站点 -->
 		<text class="title">请选择下车站点：</text>
-		<view class="station-container" hover-class="station-active" hover-stay-time="150">
-			<view class="station" wx:for="{{getoffStation}}" wx:key="index" data-index="{{index}}" bindtap="handleOffStationClick">
+		<view class="station-container" >
+			<view class="station" wx:for="{{getoffStation}}" wx:key="index" data-index="{{index}}" bindtap="handleOffStationClick" hover-class="station-active" hover-stay-time="150">
 				<image class="stationImg" src="{{offSelected == index ? '../../images/getoff-icons/selected-station.png' : '../../images/getoff-icons/station.png'}}" mode="aspectFit"></image>
 				<text class="stationName {{offSelected == index ? 'offSelected' : ''}}">{{item}}</text>
 			</view>
