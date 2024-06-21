@@ -5,7 +5,7 @@
 		<!-- 未选择路线 -->
 		<view class="noRoute-content">请先确定乘坐班次以便选择上车站点</view>
 		<view class="noRoute-btn">
-			<button class="noRouteBtn" bind:tap="gotoRoute">去选择乘坐班次</button>
+			<button class="noRouteBtn" hover-class="noRouteBtn_active" bind:tap="gotoRoute">去选择乘坐班次</button>
 		</view>
 	</view>
 
@@ -20,7 +20,7 @@
 			</view>
 		</view>
 		<view class="geton">
-			<button class="geton-btn" bind:tap="onStationConfirm">确认</button>
+			<button class="geton-btn" hover-class="geton-btn_active" bind:tap="onStationConfirm">确认</button>
 		</view>
 	</view>
 
@@ -32,7 +32,7 @@
 			<view class="successTitle">已选择上车站点:</view>
 			<view class="successName">{{getonStation[onSelected]}}</view>
 			<view class="success-btn">
-				<button class="successBtn" bind:tap="getonReselect">重新选择</button>
+				<button class="successBtn" hover-class="successBtn_active" bind:tap="getonReselect">重新选择</button>
 			</view>
 		</view>
 	</view>
@@ -61,7 +61,7 @@
 			</view>
 		</view>
 		<view class="getoff">
-			<button class="getoff-btn" bind:tap="offStationConfirm">确认</button>
+			<button class="getoff-btn" hover-class="getoff-btn_active" bind:tap="offStationConfirm">确认</button>
 		</view>
 	</view>
 	<view wx:else>
@@ -72,7 +72,7 @@
 			<view class="successTitle">已选择下车站点:</view>
 			<view class="successName">{{getoffStation[offSelected]}}</view>
 			<view class="success-btn">
-				<button class="successBtn" bind:tap="getoffReselect">重新选择</button>
+				<button class="successBtn" hover-class="successBtn_active" bind:tap="getoffReselect">重新选择</button>
 			</view>
 		</view>
 	</view>

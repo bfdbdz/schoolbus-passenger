@@ -59,15 +59,15 @@ Page({
 	getTask() {
 		let params = {}
 		console.log("选择date", this.data.date)
-		console.log("选择time",this.data.timeList[this.data.time])
-		console.log("选择number",this.data.index)
+		console.log("选择time", this.data.timeList[this.data.time])
+		console.log("选择number", this.data.index)
 		if (this.data.index != undefined && this.data.index != null) {
 			params.number = Number(this.data.index) + 1
 		}
 		if (this.data.date != '' && this.data.timeList[this.data.time] != null) {
 			params.time = this.data.date + " " + this.data.timeList[this.data.time] + ":00"
 		}
-		if (this.data.date != ''&& this.data.timeList[this.data.time] == null) {
+		if (this.data.date != '' && this.data.timeList[this.data.time] == null) {
 			wx.showToast({
 				title: '请选择一个时间进行查询',
 				icon: 'none',
@@ -84,7 +84,7 @@ Page({
 			})
 		}
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/task',
+			url: 'http://localhost:8080/passenger/task',
 			method: 'GET',
 			data: params,
 			success: (res) => {
@@ -101,23 +101,23 @@ Page({
 		})
 	},
 
-	clearDate(){
+	clearDate() {
 		this.setData({
-			date:''
+			date: ''
 		})
 		this.getTask()
 	},
 
-	clearTime(){
+	clearTime() {
 		this.setData({
-			time:''
+			time: ''
 		})
 		this.getTask()
 	},
 
-	clearRoute(){
+	clearRoute() {
 		this.setData({
-			index:null
+			index: null
 		})
 		this.getTask()
 	},
@@ -193,7 +193,7 @@ Page({
 			console.log("选择执行的工单", choice)
 			let id = choice['id']
 			wx.request({
-				url: 'http://192.168.74.155:8080/passenger/task/' + id,
+				url: 'http://localhost:8080/passenger/task/' + id,
 				method: 'PUT',
 				header: {
 					'content-type': 'application/json',
@@ -232,7 +232,7 @@ Page({
 
 	getPassengerInfo() {
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/current',
+			url: 'http://localhost:8080/passenger/current',
 			method: 'GET',
 			header: {
 				'content-type': 'application/json',
@@ -329,22 +329,22 @@ Page({
 					type: 'gcj02', // 返回可以用于 wx.openLocation 的坐标
 					success: (res) => {
 						console.log("获取位置", res)
-						this.setData({
-							latitude: res.latitude,
-							longitude: res.longitude,
-							speed: res.speed,
-							markers: [{
-								id: 0,
-								latitude: res.latitude,
-								longitude: res.longitude,
-								width: 20,
-								height: 30
-							}]
-						})
-						console.log("纬度", this.data.latitude)
-						console.log("经度", this.data.longitude)
-						console.log("速度", this.data.speed)
-						console.log("markers", this.data.markers)
+						// this.setData({
+						// 	latitude: res.latitude,
+						// 	longitude: res.longitude,
+						// 	// speed: res.speed,
+						// 	markers: [{
+						// 		id: 0,
+						// 		latitude: res.latitude,
+						// 		longitude: res.longitude,
+						// 		width: 20,
+						// 		height: 30
+						// 	}]
+						// })
+						// console.log("纬度", this.data.latitude)
+						// console.log("经度", this.data.longitude)
+						// console.log("速度", this.data.speed)
+						// console.log("markers", this.data.markers)
 						this.uploadLocationAndSpeed(res.latitude, res.longitude, res.speed, this.data.currentTime)
 					},
 					fail: (err) => {
@@ -364,7 +364,7 @@ Page({
 	// 上传用户定位和速度
 	uploadLocationAndSpeed(latitude, longitude, speed, time) {
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/location',
+			url: 'http://localhost:8080/passenger/location',
 			header: {
 				'Authorization': app.globalData.userInfo.userInfo.token
 			},
@@ -431,7 +431,7 @@ Page({
 
 	getDriverId() {
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/current',
+			url: 'http://localhost:8080/passenger/current',
 			method: 'GET',
 			header: {
 				'content-type': 'application/json',
@@ -491,7 +491,7 @@ Page({
 		console.log(geton)
 		console.log(getoff)
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/task/cancel?getonStationName=' + geton + '&getoffStationName=' + getoff,
+			url: 'http://localhost:8080/passenger/task/cancel?getonStationName=' + geton + '&getoffStationName=' + getoff,
 			method: 'PUT',
 			header: {
 				'content-type': 'application/json',

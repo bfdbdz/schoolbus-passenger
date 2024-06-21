@@ -9,7 +9,7 @@ Page({
 	data: {
 		latitude: 0,
 		longitude: 0,
-		speed: 0,
+		// speed: 0,
 		markers: [],
 		currentTime: '',
 		fromRoute: null
@@ -80,7 +80,7 @@ Page({
 				this.setData({
 					latitude: res.latitude,
 					longitude: res.longitude,
-					speed: res.speed,
+					// speed: res.speed,
 					markers: [{
 						id: 0,
 						latitude: res.latitude,
@@ -91,7 +91,7 @@ Page({
 				})
 				console.log("纬度", this.data.latitude)
 				console.log("经度", this.data.longitude)
-				console.log("速度", this.data.speed)
+				// console.log("速度", this.data.speed)
 				console.log("markers", this.data.markers)
 				this.moveMapToCenter()
 			},

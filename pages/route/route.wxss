@@ -35,7 +35,7 @@
 	margin-bottom: 50rpx;
 }
 
-.table-item:active{
+.table-item_active{
 	background-color:rgba(0, 0, 0, 0.05);
 }
 
@@ -132,7 +132,8 @@
 	margin-bottom: 30rpx;
 }
 
-.cancel:active,
-.doit:active {
+.confirm-btn_active,
+.geton-btn_active,
+.cancel-btn_active {
   background-color: #486183;
 }

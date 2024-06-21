@@ -7,6 +7,6 @@
     </view>	
 	</view>
 	<view  class="recharge">
-	<button class="recharge-btn" bind:tap="rechargeConfirm">确认充值</button>
+	<button class="recharge-btn" hover-class="recharge-btn_active" bind:tap="rechargeConfirm">确认充值</button>
 	</view>
 </view>

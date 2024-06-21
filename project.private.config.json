@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "pages/wallet/wallet",
+          "pathName": "pages/wallet/wallet",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/location/location",
           "pathName": "pages/location/location",
           "query": "",

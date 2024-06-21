@@ -79,13 +79,13 @@ App({
 		if (this.globalData.userInfo) {
 			const id = this.globalData.userInfo.userInfo.id
 			this.socketTask = wx.connectSocket({
-				url: 'ws://192.168.74.155:8080/ws/passenger_' + id,
+				url: 'ws://localhost:8080/ws/passenger_' + id,
 				header: {
 					'content-type': 'application/json'
 				},
 				method: 'GET'
 			})
-			console.log("wsURL", 'wss://192.168.74.155:8080/ws/passenger_' + id)
+			console.log("wsURL", 'wss://localhost:8080/ws/passenger_' + id)
 		}
 
 		this.socketTask.onOpen(function () {

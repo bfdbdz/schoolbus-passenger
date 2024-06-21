@@ -1,17 +1,34 @@
 /* pages/wallet/wallet.wxss */
+.container{
+	width: 90%;
+	height: 60vh;
+	padding: 80rpx 40rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.money-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
 .label{
 	height: 100rpx;
-	font-size: 40rpx;
+	font-size: 60rpx;
 }
 
 .value{
-	font-size: 70rpx;
+	font-size: 80rpx;
 	font-weight: 600;
 }
 
 .recharge{
 	position: absolute;
-	bottom: 100rpx;
+	bottom: 300rpx;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -22,6 +39,6 @@
 	border-radius: 30rpx;
 }
 
-.recharge-btn:active {
+.recharge-btn_active {
   background-color: #486183;
 }

@@ -25,7 +25,7 @@
         "pagePath": "pages/route/route",
         "iconPath": "images/tab_icons/route.png",
         "selectedIconPath": "images/tab_icons/selected-route.png",
-        "text": "路线"
+        "text": "班次"
       },
       {
         "pagePath": "pages/location/location",

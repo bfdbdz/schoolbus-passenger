@@ -12,7 +12,7 @@
   
 	<view class="choice">
   <!-- 账号与安全 -->
-	<view class="section" >
+	<view class="section" hover-class="section_active">
 	<view class="item" bindtap="toSetting">
 		<text class="label">账号与安全</text>
 		<image class="img" src="../../images/mine_icons/next.png" mode="aspectFit"></image>
@@ -20,7 +20,7 @@
 	</view>
    
   <!-- 钱包 -->
-  <view class="section">
+  <view class="section" hover-class="section_active">
     <view class="item" bindtap="toWallet">
       <text class="label">钱包</text>
 			<image class="img" src="../../images/mine_icons/next.png" mode="aspectFit"></image>

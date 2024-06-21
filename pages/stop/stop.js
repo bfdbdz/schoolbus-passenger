@@ -93,7 +93,7 @@ Page({
 		var stationChoice = this.checkChoice(this.data.getonStation[this.data.onSelected])
 		console.log("check上车站点", stationChoice)
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/getonStationName?getonStationName=' + stationChoice,
+			url: 'http://localhost:8080/passenger/getonStationName?getonStationName=' + stationChoice,
 			method: 'PUT',
 			header: {
 				'Authorization': app.globalData.userInfo.userInfo.token
@@ -181,7 +181,7 @@ Page({
 		var stationChoice = this.checkChoice(this.data.getoffStation[this.data.offSelected])
 		console.log("check下车站点", stationChoice)
 		wx.request({
-			url: 'http://192.168.74.155:8080/passenger/getoffStationName?getoffStationName=' + stationChoice,
+			url: 'http://localhost:8080/passenger/getoffStationName?getoffStationName=' + stationChoice,
 			method: 'PUT',
 			header: {
 				'Authorization': app.globalData.userInfo.userInfo.token

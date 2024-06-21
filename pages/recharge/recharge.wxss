@@ -1,6 +1,6 @@
 /* pages/recharge/recharge.wxss */
 .container{
-	width: 100%;
+	width: 90%;
 	padding: 80rpx 40rpx;
 	display: flex;
   flex-direction: column;
@@ -55,6 +55,6 @@
 	border-radius: 30rpx;
 }
 
-.recharge-btn:active {
+.recharge-btn_active {
   background-color: #486183;
 }
